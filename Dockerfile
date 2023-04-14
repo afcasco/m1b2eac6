@@ -3,7 +3,7 @@ ARG LDAP_PASSWORD
 ARG ORGANIZATION
 ARG DOMAIN
 COPY ./phpLDAPadmin/ /var/www/html/phpldapadmin
-COPY ./entrypoint.sh entrypoint.sh
+#COPY ./entrypoint.sh entrypoint.sh
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt-get -yq install slapd php7.4 ldap-utils php-xml php-ldap nano
 EXPOSE 80 389
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/var/www/html/phpldapadmin/entrypoint.sh"]
