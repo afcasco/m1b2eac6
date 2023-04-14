@@ -29,5 +29,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/m1b2eac6:latest
+          tags: afcasco/m1b2eac6:latest
 
