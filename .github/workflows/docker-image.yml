@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag afcasco/m1b2eac6:$(date +%s)
+      run: docker build . --file Dockerfile --tag afcasco/m1b2eac6:latest
     - name: docker login
       env:
         DOCKER_user: ${{secrets.DOCKER_USER}}
