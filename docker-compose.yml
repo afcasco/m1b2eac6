@@ -1,0 +1,13 @@
+# Change lines 10, 12 & 42 (and default password if you want)
+version: '2'
+services:
+  ezldap:
+    image: afcasco/m1b2eac6:latest
+    container_name: ezldap
+    environment:
+      LDAP_PASSWORD: "5mouse1"
+      ORGANIZATION: "ioc"
+      DOMAIN: "ioc.fernandez.home"
+    ports:
+      - "389:389"
+      - "80:80"
