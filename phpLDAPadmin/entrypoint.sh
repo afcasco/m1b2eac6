@@ -2,7 +2,6 @@
 CONTAINER_FIRST_STARTUP="CONTAINER_FIRST_STARTUP"
 if [ ! -e /$CONTAINER_FIRST_STARTUP ]; then
     touch /$CONTAINER_FIRST_STARTUP &&
-    # place your script that you only want to run on first startup.
     echo "slapd slapd/password2 password ${LDAP_PASSWORD}
     slapd slapd/password1 password ${LDAP_PASSWORD}
     slapd slapd/internal/generated_adminpw password ${LDAP_PASSWORD}
@@ -23,7 +22,5 @@ if [ ! -e /$CONTAINER_FIRST_STARTUP ]; then
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure slapd &&
     service apache2 start && slapd -d -1
 else
-    # script that should run the rest of the times (instances where you
-    # stop/restart containers).
     service apache2 start && slapd -d -1
 fi
