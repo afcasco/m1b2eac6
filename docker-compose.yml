@@ -1,4 +1,3 @@
-# Change lines 10, 12 & 42 (and default password if you want)
 version: '2'
 services:
   ezldap:
