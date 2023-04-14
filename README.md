@@ -29,3 +29,5 @@ DOMAIN: your domain
 Go to: localhost/phpldapadmin
 
 
+
+image on dokcerhub: https://hub.docker.com/repository/docker/afcasco/m1b2eac6
