@@ -1,3 +1,4 @@
+# build and publish to dockerhub on push
 name: Docker Image CI
 
 on:
