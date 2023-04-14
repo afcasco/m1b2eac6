@@ -15,6 +15,13 @@ patched for openssl 3.0 (Anonymous login bug).
 <h3>To run it use:</h3>
 
  <code>docker run -it -p 80:80 -e LDAP_PASSWORD=yourpassword -e ORGANIZATION=yourorg -e DOMAIN=your.org.com afcasco/m1b2eac6</code>
+ 
+or
+
+<code>docker run -it -p 80:80 -p 389:389 -e LDAP_PASSWORD=yourpassword -e ORGANIZATION=yourorgname -e DOMAIN=your.org.com afcasco/m1b2eac6</code>
+
+if you want to bind ldap port to localhost too 
+
 
 <b>ENV VARIABLES:</b>
 
