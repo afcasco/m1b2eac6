@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag afcasco/m1b2eac6:latest
+    - name: docker login
+      env:
+        DOCKER_user: ${{secrets.DOCKER_USER}}
+        DOCKER_password: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker push
+      run: docker push ${{secrets.DOCKER_USER}}/afcasco/m1b2eac6
