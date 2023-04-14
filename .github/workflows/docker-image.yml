@@ -21,6 +21,6 @@ jobs:
         DOCKER_user: afcasco
         DOCKER_password: 3233-55271255
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u afcasco-p 3233-55271255
     - name: docker push
       run: docker push ${{secrets.DOCKER_USER}}/afcasco/m1b2eac6
