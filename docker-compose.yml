@@ -4,7 +4,7 @@ services:
     image: afcasco/m1b2eac6:latest
     container_name: ezldap
     environment:
-      LDAP_PASSWORD: "5mouse1"
+      LDAP_PASSWORD: "password"
       ORGANIZATION: "ioc"
       DOMAIN: "ioc.fernandez.home"
     ports:
